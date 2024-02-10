@@ -14,7 +14,7 @@ class LoginUserDto
     public static function fromRequest(LoginRequest $request): LoginUserDto
     {
         return new self(
-            login: $request->getLogin(),
+            login: $request->getEmail(),
             password: $request->getPassword()
         );
     }

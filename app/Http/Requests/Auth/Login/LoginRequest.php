@@ -6,13 +6,13 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class LoginRequest extends FormRequest
 {
-    const LOGIN = 'login';
+    const EMAIL = 'email';
     const PASSWORD = 'password';
 
     public function rules(): array
     {
         return [
-            self::LOGIN => [
+            self::EMAIL => [
                 'required',
                 'string',
             ],
@@ -24,10 +24,9 @@ class LoginRequest extends FormRequest
         ];
     }
 
-    public function getLogin(): string
+    public function getEmail(): string
     {
-        return  $this->get(self::LOGIN);
-
+        return  $this->get(self::EMAIL);
     }
 
     public function getPassword(): string

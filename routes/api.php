@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisterController;
@@ -20,8 +21,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 //Route::post('/register', RegisterController::class);
-Route::post('register', [RegisterController::class, '__invoke']);
-Route::post('login', [RegisterController::class, '__invoke']);
+Route::post('register', RegisterController::class);
+Route::post('login', LoginController::class);
 
 
 Route::prefix('chat')->middleware('auth')->group(function () {
