@@ -13,8 +13,8 @@ class RegisterController extends Controller
     public function __invoke(RegisterRequest $request, RegisterAction $registerAction)
     {
         $dto = RegisterDto::fromRequest($request);
-        $data = $registerAction->run($dto);
+        $registerAction->save($dto);
 
-        return new AuthResource($data);
+        return response()->json(['message' => 'Registration successful']);
     }
 }
