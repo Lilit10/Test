@@ -21,6 +21,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 //Route::post('/register', RegisterController::class);
 Route::post('register', [RegisterController::class, '__invoke']);
+Route::post('login', [RegisterController::class, '__invoke']);
 
 
 Route::prefix('chat')->middleware('auth')->group(function () {
