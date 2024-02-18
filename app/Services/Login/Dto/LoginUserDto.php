@@ -2,7 +2,7 @@
 
 namespace App\Services\Login\Dto;
 
-use App\Http\Requests\Auth\Login\LoginRequest;
+use App\Services\Messages\Dto\Message\File\Auth\Login\LoginRequest;
 
 class LoginUserDto
 {

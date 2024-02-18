@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Auth\Login;
+namespace App\Services\Messages\Dto\Message\File\Auth\Login;
 
 use Illuminate\Foundation\Http\FormRequest;
 
