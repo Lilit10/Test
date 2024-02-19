@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Messages;
 
 use App\Exceptions\NotAuthorizedForChatException;
-use App\Services\Messages\Dto\Message\UpdateMessageRequest;
+use App\Http\Requests\Message\UpdateMessageRequest;
 use App\Services\Messages\Dto\MessageUpdateRequest;
 use App\Services\Messages\Actions\MessageUpdateAction;
 use App\Http\Controllers\Controller;

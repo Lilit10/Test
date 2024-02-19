@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Chats\ChatDeleteController;
+use App\Http\Controllers\Chats\CreateChatController;
 use App\Http\Controllers\ChatUserController;
 use App\Http\Controllers\ChatUserRemoveController;
 use App\Http\Controllers\Files\FileDeleteController;
@@ -40,7 +41,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('register', RegisterController::class);
 Route::post('login', LoginController::class);
 
-Route::post('/chats', ChatStoreController::class);
+//Route::post('/chats', ChatStoreController::class);
 Route::put('/chats/{id}', ChatUpdateController::class);
 Route::get('chats', ChatIndexController::class);
 Route::get('chats/{id}', ChatShowController::class);
@@ -63,9 +64,14 @@ Route::get('files', FileIndexController::class);
 
 
 Route::prefix('chat')->middleware('auth')->group(function () {
-    Route::post('/chats', ChatStoreController::class);
-    Route::put('/chats/{id}', ChatUpdateController::class);
-    Route::get('chats', ChatIndexController::class);
-    Route::get('chats/{id}', ChatShowController::class);
-    Route::delete('chats/{id}', ChatDeleteController::class);
+//    Route::post('/chats', ChatStoreController::class);
+//    Route::put('/chats/{id}', ChatUpdateController::class);
+//    Route::get('chats', ChatIndexController::class);
+//    Route::get('chats/{id}', ChatShowController::class);
+//    Route::delete('chats/{id}', ChatDeleteController::class);
 });
+Route::post('chat', CreateChatController::class);
+
+//Route::prefix('/chats')->group(function () {
+//    Route::post('/', CreateChatController::class);
+//});

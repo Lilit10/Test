@@ -2,7 +2,7 @@
 
 namespace App\Services\Messages\Dto;
 
-use App\Services\Messages\Dto\Message\UpdateMessageRequest;
+use App\Http\Requests\Message\UpdateMessageRequest;
 use Nyholm\Psr7\UploadedFile;
 
 class MessageUpdateDto

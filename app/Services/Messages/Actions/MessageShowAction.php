@@ -3,7 +3,7 @@
 namespace App\Services\Messages\Actions;
 
 use App\Exceptions\NotAuthorizedForChatException;
-use App\Repositories\Read\Messages\MessageReadRepository;
+use App\Repositories\Write\Chats\Read\Messages\MessageReadRepository;
 use App\Models\Message;
 use App\Services\Messages\Dto\MessageShowDto;
 

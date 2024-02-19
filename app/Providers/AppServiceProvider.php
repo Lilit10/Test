@@ -2,8 +2,8 @@
 
 namespace App\Providers;
 
-use App\Repositories\Read\Messages\MessageReadRepository;
-use App\Repositories\Read\Messages\MessageReadRepositoryInterface;
+use App\Repositories\Write\Chats\Read\Messages\MessageReadRepository;
+use App\Repositories\Write\Chats\Read\Messages\MessageReadRepositoryInterface;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider

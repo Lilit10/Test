@@ -3,39 +3,39 @@
 namespace App\Http\Requests\Chat;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Support\Facades\Auth;
 
-class ChatUpdateRequest extends FormRequest
+class CreateChatRequest extends FormRequest
 {
-    const USER_ID = 'user_id';
     const NAME = 'name';
     const IS_GROUP = 'is_group';
     const AVATAR = 'avatar';
+    const USER_IDS = 'user_ids';
+
 
     public function rules(): array
     {
         return [
-            self::USER_ID => [
-                'required',
-                'exists:users,id',
-            ],
             self::NAME => [
+                'required',
                 'string',
             ],
 
             self::IS_GROUP => [
+                'required',
                 'boolean',
             ],
+
             self::AVATAR => [
                 'nullable',
-                'image',
+                'string',
+            ],
+
+            self::USER_IDS => [
+                'required',
+                'array',
+                'min:1',
             ],
         ];
-    }
-
-    public function getUserId(): int
-    {
-        return $this->get(self::USER_ID);
     }
 
     public function getName(): string
@@ -43,13 +43,18 @@ class ChatUpdateRequest extends FormRequest
         return  $this->get(self::NAME);
     }
 
-    public function getIsGroup(): string
+    public function getIsGroup(): bool
     {
         return $this->get(self::IS_GROUP);
     }
 
-    public function getAvatar(): string
+    public function getAvatar(): ?string
     {
         return $this->get(self::AVATAR);
+    }
+
+    public function getUserIds(): array
+    {
+        return $this->get(self::USER_IDS, []);
     }
 }

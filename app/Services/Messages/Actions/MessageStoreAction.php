@@ -4,7 +4,7 @@ namespace App\Services\Messages\Actions;
 
 use App\Exceptions\NotAuthorizedForChatException;
 use App\Services\Messages\Dto\MessageStoreDto;
-use App\Repositories\Read\Messages\MessageReadRepository;
+use App\Repositories\Write\Chats\Read\Messages\MessageReadRepository;
 use App\Models\File;
 use App\Models\Message;
 use Carbon\Carbon;
@@ -25,8 +25,6 @@ class MessageStoreAction
         if (!$userInChat) {
             throw new NotAuthorizedForChatException();
         }
-
-        $file = null;
 
         if ($dto->file_id) {
             $file = File::find($dto->file_id);

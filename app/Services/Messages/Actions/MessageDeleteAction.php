@@ -5,7 +5,7 @@ namespace App\Services\Messages\Actions;
 
 use App\Exceptions\NotAuthorizedForChatException;
 use App\Models\File;
-use App\Repositories\Read\Messages\MessageReadRepository;
+use App\Repositories\Write\Chats\Read\Messages\MessageReadRepository;
 use App\Models\Message;
 use App\Services\Messages\Dto\MessageDeleteDto;
 use Illuminate\Support\Facades\DB;

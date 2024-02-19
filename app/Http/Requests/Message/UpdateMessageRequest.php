@@ -2,22 +2,20 @@
 
 // app/Http/Requests/MessageUpdateRequest.php
 
-namespace App\Services\Messages\Dto\Message;
+namespace App\Http\Requests\Message;
 
 use Illuminate\Foundation\Http\FormRequest;
 
 class UpdateMessageRequest extends FormRequest
 {
-    private const USER_ID = 'user_id';
     private const CONTENT = 'content';
     private const FILE = 'file';
 
     public function rules()
     {
         return [
-            self::USER_ID => 'sometimes|required|exists:users,id',
-            self::CONTENT => 'sometimes|nullable|string',
-            self::FILE => 'sometimes|nullable|file',
+            self::CONTENT => 'nullable|string',
+            self::FILE => 'nullable|file',
         ];
     }
 

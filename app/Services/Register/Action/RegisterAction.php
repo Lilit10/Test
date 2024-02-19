@@ -2,7 +2,7 @@
 
 namespace App\Services\Register\Action;
 
-use App\Repositories\Write\User\UserWriteRepositoryInterface;
+use App\Repositories\Write\Chats\Write\User\UserWriteRepositoryInterface;
 use App\Services\Register\Dto\RegisterDto;
 use Illuminate\Support\Facades\Http;
 

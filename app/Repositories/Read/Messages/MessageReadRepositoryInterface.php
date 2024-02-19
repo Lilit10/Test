@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Repositories\Read\Messages;
+namespace App\Repositories\Write\Chats\Read\Messages;
 
 interface MessageReadRepositoryInterface
 {

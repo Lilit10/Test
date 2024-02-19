@@ -3,11 +3,9 @@
 namespace App\Http\Requests\Chat;
 
 use Illuminate\Foundation\Http\FormRequest;
-use phpseclib3\Math\PrimeField\Integer;
 
-class ChatStoreRequest extends FormRequest
+class UpdateChatRequest extends FormRequest
 {
-    const USER_ID = 'user_id';
     const NAME = 'name';
     const IS_GROUP = 'is_group';
     const AVATAR = 'avatar';
@@ -15,10 +13,6 @@ class ChatStoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            self::USER_ID => [
-                'required',
-                'exists:users,id',
-            ],
             self::NAME => [
                 'required',
                 'string',
@@ -28,23 +22,20 @@ class ChatStoreRequest extends FormRequest
                 'required',
                 'boolean',
             ],
+
             self::AVATAR => [
                 'nullable',
-                'image',
+                'string',
             ],
         ];
     }
 
-    public function getUserId(): int
-    {
-        return $this->get(self::USER_ID);
-    }
     public function getName(): string
     {
         return  $this->get(self::NAME);
     }
 
-    public function getIsGroup(): string
+    public function getIsGroup(): bool
     {
         return $this->get(self::IS_GROUP);
     }

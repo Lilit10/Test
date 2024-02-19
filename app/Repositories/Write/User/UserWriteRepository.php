@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Repositories\Write\User;
+namespace App\Repositories\Write\Chats\Write\User;
 
 use App\Exceptions\SavingErrorException;
 use App\Models\User;
